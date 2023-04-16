@@ -1,8 +1,8 @@
 package org.example;
 
 public class RunningTrack {
-    private Integer id = 0;
-    private Integer length = 1200;
+    private Integer id;
+    private Integer length = 1200; // постоянная длина для каждого экземпляра
     private static Integer count = 0;
 
     public RunningTrack() {

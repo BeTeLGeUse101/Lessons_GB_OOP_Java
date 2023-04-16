@@ -1,8 +1,8 @@
 package org.example;
 
 public class Wall {
-    private Integer id = 0;
-    private Integer Height = 60;
+    private Integer id;
+    private Integer Height = 60; // постоянная высота для каждого экземпляра
     private static Integer count = 0;
 
     public Wall() {

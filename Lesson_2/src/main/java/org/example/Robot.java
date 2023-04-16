@@ -1,11 +1,12 @@
 package org.example;
 
 public class Robot implements Doing{
-    private Integer id = 0;
+    private Integer id;
     private static Integer count = 0;
-    private Integer runningPower = 0;
-    private Integer jumpPower = 0;
-    private Boolean victory = true;
+    private Integer runningPower;
+    private Integer jumpPower;
+    private Boolean victory = false;
+    private Boolean victory2 = false;
 
     public Robot(Integer runningPower, Integer jumpPower) {
         count++;
@@ -50,24 +51,33 @@ public class Robot implements Doing{
         return victory;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Робот №(%d): Сила бега - %d; Сила прыжка - %d", getId(), getRunningPower(), getJumpPower());
+    public void setVictory2(Boolean victory2) {
+        this.victory2 = victory2;
+    }
+
+    public Boolean getVictory2() {
+        return victory2;
     }
 
     @Override
     public void Run(RunningTrack runningTrack, Wall wall) {
-        if (runningTrack.getLength() < getRunningPower()) 
-            System.out.printf("Сила Робота(%d): %dм; Беговая дорожка №%d: длина %dм; ПОЛУЧИЛОСЬ\n", id, getRunningPower(), runningTrack.getId(), runningTrack.getLength());
-        else 
-            System.out.printf("Сила Робота(%d): %dм; Беговая дорожка №%d: длина %dм; НЕ ПОЛУЧИЛОСЬ\n", id, getRunningPower(), runningTrack.getId(), runningTrack.getLength()); setVictory(false);
+        if (runningTrack.getLength() < getRunningPower()) {
+            System.out.printf("Сила Робота(%d): %dм; Беговая дорожка №%d: длина %dм; ПОЛУЧИЛОСЬ\n", id, getRunningPower(),runningTrack.getId(), runningTrack.getLength());
+            setVictory(true);
+        } else {
+            System.out.printf("Сила Робота(%d): %dм; Беговая дорожка №%d: длина %dм; НЕ ПОЛУЧИЛОСЬ\n", id, getRunningPower(), runningTrack.getId(), runningTrack.getLength());
+            setVictory(false);
+        }
     }
 
     @Override
     public void Jump(RunningTrack runningTrack, Wall wall) {
-        if (wall.getHeight() < getJumpPower())
+        if (wall.getHeight() < getJumpPower()) {
             System.out.printf("Сила Робота(%d): %dм; Стена №%d: высота %dм; ПОЛУЧИЛОСЬ\n", id, getJumpPower(), wall.getId(), wall.getHeight());
-        else 
-            System.out.printf("Сила Робота(%d): %dм; Стена №%d: высота %dм; НЕ ПОЛУЧИЛОСЬ\n", id, getJumpPower(), wall.getId(), wall.getHeight()); setVictory(false);
+            setVictory2(true);
+        } else {
+            System.out.printf("Сила Робота(%d): %dм; Стена №%d: высота %dм; НЕ ПОЛУЧИЛОСЬ\n", id, getJumpPower(), wall.getId(), wall.getHeight());
+            setVictory2(false);
+        }
     }
 }
