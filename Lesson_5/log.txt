@@ -1,0 +1,16 @@
+апр. 29, 2023 6:20:18 PM org.example.Logging log
+INFO: 142/41
+апр. 29, 2023 6:20:18 PM org.example.Logging log
+INFO: 246.0 + 426.0i
+апр. 29, 2023 6:20:18 PM org.example.Logging log
+INFO: 0/1
+апр. 29, 2023 6:20:18 PM org.example.Logging log
+INFO: 0.0
+апр. 29, 2023 6:20:18 PM org.example.Logging log
+INFO: 5041/1681
+апр. 29, 2023 6:20:18 PM org.example.Logging log
+INFO: -30240.0 + 52398.0i
+апр. 29, 2023 6:20:18 PM org.example.Logging log
+INFO: 1/1
+апр. 29, 2023 6:20:18 PM org.example.Logging log
+INFO: 1.0

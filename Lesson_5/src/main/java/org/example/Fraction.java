@@ -1,6 +1,7 @@
 package org.example;
 
 public class Fraction {
+    private String logName = "fraction";
     private int numerator;   // числитель
     private int denominator; // знаменатель
 
@@ -15,6 +16,10 @@ public class Fraction {
 
     public int getDenominator() {
         return denominator;
+    }
+
+    public String getLogName() {
+        return logName;
     }
 
     public void setNumerator(int numerator) {
