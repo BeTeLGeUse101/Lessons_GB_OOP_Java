@@ -32,5 +32,6 @@ public class Controller {
         System.out.println(a);
         b = complex.divide(complex);
         System.out.println(b);
+        scanner.close();
     }
 }
