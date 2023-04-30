@@ -1,6 +1,6 @@
 package org.example.task_1;
 
-public class Order implements FunctionStock{
+public class Order extends Warehouse implements FunctionStock{
 
     private final Warehouse warehouse;
 
