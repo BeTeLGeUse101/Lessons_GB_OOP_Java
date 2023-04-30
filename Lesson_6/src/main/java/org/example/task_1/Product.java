@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 
-public class Product {
+public class Product extends Warehouse{
     private Integer id;
     private String productName;
     private Integer quantity;

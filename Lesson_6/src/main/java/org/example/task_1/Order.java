@@ -1,28 +1,46 @@
 package org.example.task_1;
 
-public class Order {
+public class Order implements FunctionStock{
 
-    private Warehouse warehouse;
+    private final Warehouse warehouse;
 
-    private static Integer idOrder;
+    private static Integer idOrder = 0;
 
     public Order() {
         ++idOrder;
-        new Warehouse();
+        warehouse = new Warehouse();
     }
 
-
-
-    public static Integer getIdOrder() {
+    public Integer getIdOrder() {
         return idOrder;
     }
 
-    public Warehouse getWarehouse() {
+    private Warehouse getWarehouse() {
         return warehouse;
     }
 
     @Override
     public String toString() {
         return String.format("Order №%d: Склад:\n" + getWarehouse(), getIdOrder());
+    }
+
+    @Override
+    public void addProduct(Integer id, String nameProduct, Integer quantity, Double price) {
+        getWarehouse().addProduct(id, nameProduct, quantity, price);
+    }
+
+    @Override
+    public void deleteProduct(int numberInStock) {
+        getWarehouse().deleteProduct(numberInStock);
+    }
+
+    @Override
+    public void increaseProduct(Integer numberProduct, Integer numberIncrease) {
+        getWarehouse().increaseProduct(numberProduct, numberIncrease);
+    }
+
+    @Override
+    public void decreaseProduct(Integer numberProduct, Integer numberDecrease) {
+        getWarehouse().decreaseProduct(numberProduct,numberDecrease);
     }
 }
